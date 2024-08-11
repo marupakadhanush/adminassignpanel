@@ -1,60 +1,59 @@
 import React, { useState } from 'react';
-import './Profile.css'; // Import CSS
+import { posts as initialPosts } from '../data/dummyData';
+import './PostsList.css'; // Import CSS
 
-const Profile = () => {
-    const [profile, setProfile] = useState({
-        name: 'John Doe',
-        email: 'johndoe@example.com',
-        bio: 'This is a short bio',
-    });
+const PostsList = () => {
+    const [posts, setPosts] = useState(initialPosts);
 
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setProfile({ ...profile, [name]: value });
+    const handleEdit = (postId) => {
+        // Placeholder for edit functionality
+        // For example, open a modal or redirect to an edit page
+        console.log(`Edit post ${postId}`);
     };
 
-    const handleSave = () => {
-        // Save profile updates, e.g., to a backend service
-        console.log('Profile updated:', profile);
+    const handleDelete = (postId) => {
+        // Confirm before deleting
+        if (window.confirm('Are you sure you want to delete this post?')) {
+            // Filter out the post with the specified ID
+            setPosts(posts.filter(post => post.id !== postId));
+        }
+    };
+
+    const handleView = (postId) => {
+        // Placeholder for view functionality
+        // For example, open a modal with post details or redirect to a details page
+        console.log(`View post ${postId}`);
     };
 
     return (
-        <div className="profile">
-            <h1>Profile</h1>
-            <form>
-                <div className="form-group">
-                    <label htmlFor="name">Name:</label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={profile.name}
-                        onChange={handleInputChange}
-                    />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="email">Email:</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={profile.email}
-                        onChange={handleInputChange}
-                    />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="bio">Bio:</label>
-                    <textarea
-                        id="bio"
-                        name="bio"
-                        value={profile.bio}
-                        onChange={handleInputChange}
-                    />
-                </div>
-                <button type="button" className="save" onClick={handleSave}>Save</button>
-            </form>
+        <div className="posts-list">
+            <h1>Posts</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Post ID</th>
+                        <th>Caption</th>
+                        <th>Media URL</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {posts.map(post => (
+                        <tr key={post.id}>
+                            <td>{post.id}</td>
+                            <td>{post.caption}</td>
+                            <td>{post.mediaUrl}</td>
+                            <td>
+                                <button className="edit" onClick={() => handleEdit(post.id)}>Edit</button>
+                                <button className="delete" onClick={() => handleDelete(post.id)}>Delete</button>
+                                <button className="view" onClick={() => handleView(post.id)}>View</button>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </div>
     );
 };
 
-export default Profile;
+export default PostsList;
