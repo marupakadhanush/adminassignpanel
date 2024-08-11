@@ -1,0 +1,71 @@
+.profile {
+    padding: 100px;
+    background: linear-gradient(135deg, #141E30, #243B55);
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    color: #ECF0F1;
+}
+
+.profile h1 {
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #2C3E50;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #ECF0F1;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #ECF0F1;
+    background-color: #34495E;
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #FFFFFF;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button.save {
+    background-color: #1ABC9C;
+}
+
+button.save:hover {
+    background-color: #16A085;
+}

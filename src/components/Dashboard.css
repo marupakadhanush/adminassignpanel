@@ -1,0 +1,165 @@
+.dashboard {
+    padding: 100px;
+    margin-left: 0px;
+    background: linear-gradient(135deg, #141E30, #243B55);
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    color: #ECF0F1;
+}
+
+.kpi-boxes {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.kpi-box {
+    background: #1ABC9C;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 23%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFFFFF;
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.kpi-box span {
+    display: block;
+    margin-top: 10px;
+    font-size: 24px;
+    color: #ECF0F1;
+}
+
+.kpi-box:hover {
+    transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+    .kpi-box {
+        width: 48%;
+    }
+}
+
+@media (max-width: 480px) {
+    .kpi-box {
+        width: 100%;
+    }
+}
+
+.charts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.chart {
+    width: 100%;
+    max-width: 500px;
+    background: #34495E;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.chart h3 {
+    color: #ECF0F1;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .chart {
+        width: 100%;
+    }
+}
+
+.table-container {
+    background: #2C3E50;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.table-title {
+    color: #ECF0F1;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    padding: 10px;
+    text-align: left;
+    color: #ECF0F1;
+}
+
+table th {
+    background: #34495E;
+}
+
+table tr:nth-child(even) {
+    background: #3C5062;
+}
+
+table tr:hover {
+    background: #1ABC9C;
+    cursor: pointer;
+}
+
+button {
+    background: #E74C3C;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-left: 10px;
+}
+
+button:hover {
+    background: #C0392B;
+}
+
+button.edit {
+    background: #3498DB;
+}
+
+button.edit:hover {
+    background: #2980B9;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background: #3498DB;
+    color: #FFFFFF;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background 0.3s ease;
+}
+
+.pagination button:hover {
+    background: #2980B9;
+}
